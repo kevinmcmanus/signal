@@ -96,7 +96,7 @@ class Pulse():
         assert nperiods*len(sig_period)+extra == total_samples
 
         sig = np.concatenate([np.tile(sig_period, nperiods), sig_period[:extra]])
-        print(f'Total samples: {total_samples}, Signal Length: {len(sig)}')
+        #print(f'Total samples: {total_samples}, Signal Length: {len(sig)}')
         assert len(sig)== total_samples
 
         return sig
