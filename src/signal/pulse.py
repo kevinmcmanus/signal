@@ -1,6 +1,7 @@
 import numpy as np
 
 
+
 class Pulse():
 
     _pulsedefaults = { 'pulse_period': 0.7, 'pulse_width': 0.05, 'pulse_phase': np.pi,
@@ -101,3 +102,9 @@ class Pulse():
 
         return sig
 
+
+
+if __name__ == "__main__":
+    zz = Pulse(pulse_type='gaussian', pulse_period=0.7).pulse_signal(sigdur=60)
+
+    print(f'Length: {len(zz)}')
