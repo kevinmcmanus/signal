@@ -1,6 +1,7 @@
 import numpy as np
 
 
+
 class Pulse():
 
     _pulsedefaults = { 'pulse_period': 0.7, 'pulse_width': 0.05, 'pulse_phase': np.pi,
@@ -96,8 +97,14 @@ class Pulse():
         assert nperiods*len(sig_period)+extra == total_samples
 
         sig = np.concatenate([np.tile(sig_period, nperiods), sig_period[:extra]])
-        print(f'Total samples: {total_samples}, Signal Length: {len(sig)}')
+        #print(f'Total samples: {total_samples}, Signal Length: {len(sig)}')
         assert len(sig)== total_samples
 
         return sig
 
+
+
+if __name__ == "__main__":
+    zz = Pulse(pulse_type='gaussian', pulse_period=0.7).pulse_signal(sigdur=60)
+
+    print(f'Length: {len(zz)}')
